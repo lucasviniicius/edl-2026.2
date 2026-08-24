@@ -1,13 +1,11 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include "ponto.h"
 
 struct ponto {
     float x;
     float y;
 };
-
-typedef struct ponto Ponto;
 
 Ponto* criar(float x, float y){
     Ponto* p = malloc(sizeof(Ponto));
@@ -32,14 +30,4 @@ void destruir(Ponto* p){
     if(p != NULL){
         free(p);
     }
-}
-
-int main(){
-    Ponto* p1 = criar(2, 2);
-    Ponto* p2 = criar(3, 3);
-
-    float resultado = calculaDistacia(p1, p2);
-    printf("Resultado: %.2f", resultado);
-
-    return 0;
 }

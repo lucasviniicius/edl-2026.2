@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include "quadrado.h"
 
 struct quadrado {
     float lado;
@@ -7,7 +7,6 @@ struct quadrado {
     float perimetro;
 };
 
-typedef struct quadrado Quadrado;
 
 Quadrado* criar(float lado){
     Quadrado* q = malloc(sizeof(Quadrado));
@@ -50,18 +49,4 @@ void destruir(Quadrado* q){
     if(q != NULL){
         free(q);
     }
-}
-
-int main(){
-    float lado = 4;
-
-    Quadrado* q = criar(lado);
-
-    printf("Lado do quadrado: %.2f\n", acessar(q, 'L'));
-    printf("Área do quadrado: %.2f\n", acessar(q, 'A'));
-    printf("Perímetro do quadrado: %.2f", acessar(q, 'P'));
-
-    destruir(q);
-
-    return 0;
 }
