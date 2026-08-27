@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "pilha.h"
 
 #define MAX 4
 
@@ -8,8 +9,6 @@ struct pilha{
     int dados[MAX];
     int topo;
 };
-
-typedef struct pilha Pilha;
 
 Pilha* criar(){
     Pilha* p = malloc(sizeof(struct pilha));
@@ -53,16 +52,4 @@ void destruir(Pilha* p){
     if(p != NULL){
         free(p);
     }
-}
-
-int main(){
-    Pilha* p = criar();
-    empilhar(p, 10);
-    empilhar(p, 20);
-    printf("Topo: %d\n", acessarTopo(p));
-    desempilhar(p);
-    printf("Topo: %d\n", acessarTopo(p));
-    destruir(p);    
-
-    return 0;
 }
