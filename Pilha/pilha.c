@@ -53,3 +53,17 @@ void destruir(Pilha* p){
         free(p);
     }
 }
+
+Pilha* copiaPilha(Pilha* p){
+    Pilha* copia = criar();
+
+    if(copia != NULL){
+        copia->topo = p->topo;
+    }
+
+    for(int i = 0; i < p->topo; i++){
+        copia->dados[i] = p->dados[i];
+    }
+
+    return copia;
+}
